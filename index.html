@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login Page</title>
+        <style>
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+            a:hover {
+                color: aqua;
+                cursor: pointer;
+            }
+            a {
+                color: rgb(0, 140, 255);
+            }
+            body {
+                background-color: rgb(44, 44, 44);
+                text-align: center;
+                color: azure;
+            }
+            h1 {
+                font-size: 50px;
+            }
+            h2 {
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
+            header {
+                background-color: rgb(0, 134, 171);
+                padding: 50px 10px;
+                text-align: center;
+            }
+            p {
+                margin-bottom: 30px;
+            }
+            section.loginForm {
+                margin: 50px 500px;
+                padding: 50px 25px;
+                border-radius: 25px;
+            }
+            .loginForm {
+                background-color: rgb(62, 62, 62);
+            }
+            label {
+                font-weight: bold;
+                font-size: large;
+                color: rgb(0, 134, 171);
+            }
+            input[type="text"], input[type="username"],
+            input[type="text"], input[type="password"] {
+                height: 20px;
+                width: 200px;
+                border-radius: 7px;
+                background-color: rgb(240, 240, 240);
+                font-size: small;
+                font-weight: bold;
+            }
+            #user:hover, #Password:hover {
+                background-color: rgb(169, 228, 244);
+            }
+            #user,
+            #Password {
+                margin: 10px 10px;
+                padding: 5px 5px;
+            }
+            .logIn:hover {
+                background-color: rgb(109, 214, 255);
+                color: black;
+                cursor: pointer;
+            }
+            .logIn {
+                margin: 40px 10px;
+                padding: 10px 60px;
+                background-color: rgb(0, 134, 171);
+                border-radius: 10px;
+                color: aliceblue;
+                font-weight: bold;
+                font-size: x-large;
+            }
+            .hrText {
+                border: none;
+                position: relative;
+                text-align: center;
+                color: rgb(169, 228, 244);
+            }
+            .hrText::before {
+                background: linear-gradient(to right, transparent, rgb(169, 228, 244), transparent);
+                content: "";
+                position: absolute;
+                height: 1px;
+                width: 100%;
+                left: 0;
+                top: 50%;
+            }
+            .hrText::after {
+                content: attr(data-content);
+                position: relative;
+                background-color: rgb(62, 62, 62);
+                padding: 0 5px;
+            }
+            .createAccount:hover {
+                background-color: rgb(42, 255, 116);
+                color: black;
+                cursor: pointer;
+            }
+            .createAccount {
+                background-color: rgb(2, 196, 2);
+                border-radius: 10px;
+                margin-top: 50px;
+                padding: 15px 30px;
+                font-weight: bold;
+                font-size: large;
+                color: white;
+            }
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            }
+            /* Modal Content/Box */
+            .modal-content {
+                background-color: #fefefe;
+                margin: 15% auto; /* 15% from the top and centered */
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%; /* Could be more or less, depending on screen size */
+            }
+            /* The Close Button */
+            .close {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+                .close:hover,
+                .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>YourSpace</h1>
+        </header>
+        <section class="loginForm">
+            <form action="popup.html" method="get" target="_blank">
+                <h2>Login to YourSpace</h2>
+                <section class="logInfo">
+                    <label for="user">Username:</label>
+                    <input type="username" id="user" placeholder="username" required>
+                    <br>
+                    <label for="Password">Password:</label>
+                    <input type="password" id="Password" placeholder="password" 
+                        pattern="(?=.*\d)(?=.*[a-zA-Z])(?=.*[!$#&])(?=.*[0-9]).{8,}" 
+                        title="Must contain at least one number, one special character, and be at least 8 characters long" required>
+                </section>
+                <section class="logBtn" onclick="popUp()">
+                    <button type="submit" class="logIn">Log In</button>
+                    <a href="./popup.html" target="_blank"><p>Forgot account?</p></a>
+                </section>
+                <hr class="hrText" data-content="OR">
+            </form>
+            <form action="popup.html" method="get" target="_blank">
+                <section class="createAccBtn" onclick="popUp()">
+                    <button type="submit" class="createAccount" id="createAccount">Create Account</button>
+                </section>
+            </form>
+        </section>
+    </body>
+</html>
